@@ -1,29 +1,43 @@
 <% layout("layouts/boilerplate") %>
-    <h1>Campgrounds</h1>
-    <ul>
-        <%for(let camp of campgrounds){%>
-            <div class="card mb-3">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-fluid" src="<%=camp.images[0].url%>" alt="No Image">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <%=camp.title%>
-                            </h5>
-                            <p class="card-text">
-                                <%=camp.description%>
-                            </p>
-                            <p class="card-text">
-                                <small class="text-muted">
-                                    <%=camp.location%>
-                                </small>
-                            </p>
-                            <a class="btn btn-primary" href="/campgrounds/<%=camp._id%>">View <%=camp.title%></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <% } %>
-    </ul>
+<link rel="stylesheet" href="/stylesheets/index.css" />
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Campgrounds</h1>
+    <p class="lead">
+      View information and reviews about various campgrounds visited by
+      tourists.
+    </p>
+    <a class="btn btn-lg btn-secondary" href="/campgrounds/new"
+      >Add New Campground</a
+    >
+  </div>
+</div>
+<div class="container">
+  <ul>
+    <%for(let camp of campgrounds){%>
+    <div class="card mb-3">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="img-fluid" src="<%=camp.images[0].url%>" alt="No Image" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%=camp.title%></h5>
+            <%if(camp.description.length<(170)){%>
+            <p class="card-text"><%=camp.description%></p>
+            <%}else{%>
+            <p class="card-text"><%=camp.description.substr(0,170)%> ...</p>
+            <%}%>
+            <p class="card-text">
+              <small class="text-muted"> <%=camp.location%> </small>
+            </p>
+            <a class="btn btn-primary" href="/campgrounds/<%=camp._id%>"
+              ><i class="fas fa-campground"></i> View <%=camp.title%></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </ul>
+</div>

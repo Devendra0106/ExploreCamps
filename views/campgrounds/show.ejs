@@ -5,7 +5,7 @@
     <div
       id="carouselExampleControls"
       class="carousel slide"
-      data-bs-ride="carousel"
+      data-ride="carousel"
     >
       <div class="carousel-inner">
         <% campground.images.forEach((img, i)=>{%>
@@ -19,19 +19,19 @@
         class="carousel-control-prev"
         href="#carouselExampleControls"
         role="button"
-        data-bs-slide="prev"
+        data-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="sr-only">Previous</span>
       </a>
       <a
         class="carousel-control-next"
         href="#carouselExampleControls"
         role="button"
-        data-bs-slide="next"
+        data-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="sr-only">Next</span>
       </a>
       <% } %>
     </div>
@@ -125,7 +125,7 @@
         </fieldset>
       </div>
       <div class="mb-3">
-        <label class="form-label" for="body">Review comment</label>
+        <label class="form-label" for="body">Add comment</label>
         <textarea
           class="form-control"
           name="review[body]"
@@ -138,10 +138,12 @@
       </div>
       <button class="btn btn-success">Submit</button>
     </form>
-    <%}%> <%for(let review of campground.reviews){%>
+    <%}%>
+    <h4>View reviews</h4>
+    <%for(let review of campground.reviews){%>
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title"><%=review.author.username%></h5>
+        <h5 class="card-title">Posted by: <%=review.author.username%></h5>
         <p class="starability-result" data-rating="<%=review.rating%>">
           Rated: <%=review.rating%> stars
         </p>

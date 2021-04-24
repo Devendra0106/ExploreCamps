@@ -1,8 +1,9 @@
 # ExploreCamps
-Full-stack Web Application where user can view and add Campgrounds information. User can also add rating and reviews on other user's posts.
+Full-stack Web Application where user can view and share Campgrounds information. User can also add rating and reviews on other user's posts.
 
 ## Features
-* End user can Authenticate(Register, Login and Logout).
+* Implemented Authenticate(Register, Login and Logout).
+* End User can share or view campgrounds information
 * User can add review and rating on information posted by him or other users.
 * Authorized user can edit or delete posts and rating/reviews.
 

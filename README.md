@@ -15,6 +15,7 @@ HTML, CSS, JS, EJS and Bootstrap
 Node.js, Express.js, MongoDB and Mongoose
 
 ## View Live Demo
+`App Deployed on Heroku`
 * [ExploreCamps](https://protected-dusk-63517.herokuapp.com/)
 
 ## Screen Shots
